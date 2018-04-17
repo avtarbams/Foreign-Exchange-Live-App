@@ -1,0 +1,92 @@
+page-home {
+
+  @keyframes glowing {
+    0% { box-shadow: 0 0 -10px #c4a300; }
+    40% { box-shadow: 0 0 20px #c4a300; }
+    60% { box-shadow: 0 0 20px #c4a300; }
+    100% { box-shadow: 0 0 -10px #c4a300; }
+  }
+
+  @keyframes enlarge {
+    0% { box-shadow: 0 0 -10px #c4a300; }
+    40% { box-shadow: 0 0 20px #c4a300; }
+    60% { box-shadow: 0 0 20px #c4a300; }
+    100% { box-shadow: 0 0 -10px #c4a300; }
+  }
+
+
+  .button-glow {
+    animation: glowing 1000ms infinite;
+    background-color: #222222;
+    color: #c4a300;
+  }
+  .center{
+    padding-top: 40px;
+    text-align:center;
+    padding-bottom: 40px;
+  }
+  ion-card {
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    animation-name: blurFadeInOut;
+    animation-duration: 2s;
+    transform: scale(2);
+  }
+  .card-title-always {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    animation-name: blurFadeInOut2;
+    animation-duration: 2s;
+    transform: scale(2);
+  }
+
+
+
+  @keyframes blurFadeInOut {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    75% {
+      opacity: 0.6;
+      transform: scale(2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(2);
+    }
+  }
+  @keyframes blurFadeInOut2 {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    75% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+}

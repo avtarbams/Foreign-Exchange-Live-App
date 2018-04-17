@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color = "primary">
+    <ion-title>
+      Foreign Exchange Live App
+    </ion-title>
+    <ion-fab top right >
+      <button ion-fab color = "danger">Share</button>
+      <ion-fab-list side="left">
+        <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-instagram"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-youtube"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Convert From</ion-label>
+    <ion-select [(ngModel)]="f_Currency">
+      <ion-option *ngFor="let cur of from_currency">{{ cur.From}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <div class="center"></div>
+  <ion-item>
+    <ion-label>Convert To</ion-label>
+    <ion-select [(ngModel)]="t_Currency">
+      <ion-option *ngFor="let curr of to_currency">{{ curr.To }}</ion-option>
+    </ion-select>
+  </ion-item>
+  <div class ="center">
+  <button ion-button round large (click)="convert()" class="button-glow">
+    Calculate Xchange
+  </button></div>
+  <ion-card>
+    <div class="card-title" *ngFor="let res of response">
+      {{ res.rate}}
+    </div>
+  </ion-card>
+<div class="center">
+  <button ion-button icon-start small color = "secondary" (click)="show()">
+    <ion-icon name="cash"></ion-icon>
+    Start Live Refresh
+  </button>
+
+  <button ion-button icon-end small color = "danger" (click)="stopCapture()">
+    Stop Live Refresh
+    <ion-icon name="hand"></ion-icon>
+  </button>
+</div>
+  <ion-card>
+    <div *ngFor="let resp of response_Always" class="card-title-always">
+      {{ resp.rate}}
+    </div>
+  </ion-card>
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color = "primary">
+    <ion-title>Made with <ion-icon name="heart" color = "danger"></ion-icon> by Avtar S Bamra</ion-title>
+  </ion-toolbar>
+</ion-footer>
